@@ -9,7 +9,8 @@ class Atm
     when insufficient_funds_in_account?(amount, account)
       # we exit the method if the amount we want to withdraw is
       # bigger than the balance on the account
-      return
+      { status: false, message: 'insufficient funds', date: Date.today }
+  
     else
       # If it's not, we perform the transaction
       perform_transaction(amount, account)
