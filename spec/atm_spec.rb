@@ -30,5 +30,14 @@ describe Atm do
     # a larger amount. In this case 105.
     expect(subject.withdraw(105, account)).to eq expected_output
   end
+  it 'reject withdraw if ATM has insufficient funds' do
+    # To prepare the test we want to decrease the funds value
+    # to a lower value then the original 1000
+    subject.funds = 50
+    # Then we set the `expected_output`
+    expected_output = { status: false, message: 'insufficient funds in ATM', date: Date.today }
+    # And prepare our assertion/expectation
+    expect(subject.withdraw(100, account)).to eq expected_output
+  end
 
 end
