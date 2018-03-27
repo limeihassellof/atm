@@ -5,6 +5,8 @@ require 'date'
 describe Account do
   let(:person) {instance_double('Person', name: 'Limei')}
   subject { described_class.new({owner: person}) }
+  # subject = Account.new({owner: person}) #this is the normal way to do it, but does not work in rspec. In rspec you need to do the line above
+
   it 'has 4 digit number for pin code' do
     number = 1234
     number_length = Math.log10(number).to_i + 1
