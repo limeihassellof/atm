@@ -11,11 +11,11 @@ class Dog
     puts "washing a #{@size} dog"
   end
 
-  def initialize(color, size)
+  def initialize(color = 'pink', size = 'huge')
     @color = color
     @size = size
 
-    # puts "#{size} #{color} dog created"
+    puts "#{size} #{color} dog created"
   end
 
   def happy
@@ -49,4 +49,6 @@ nelson.wash #this is also right
 
 nelson.happy
 
-pelle.bark #this will fail when bark is private
+# pelle.bark #this will fail when bark is private
+
+sture = Dog.new

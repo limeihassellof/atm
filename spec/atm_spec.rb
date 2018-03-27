@@ -2,7 +2,7 @@ require './lib/atm.rb'
 require 'date'
 
 describe Atm do
-  let(:account) { instance_double('Account', pin_code: '1234', exp_date: '04/19',account_status: :active) }
+  let(:account) { instance_double('Account', pin_code: '1234', exp_date: '04/19', account_status: :active) }
   before do
     # Before each test we need to add an attribute of `balance`
     # to the `account` object and set the value to `100`
