@@ -3,14 +3,6 @@ class Dog
   attr_accessor :size
   NUMBER_OF_LEGS = 4
 
-  def self.wash(dog)
-    puts "washing a #{dog.size} dog"
-  end
-
-  def wash
-    puts "washing a #{@size} dog"
-  end
-
   def initialize(color = 'pink', size = 'huge')
     @color = color
     @size = size
@@ -22,6 +14,14 @@ class Dog
     bark
     bark
     bark
+  end
+
+  def self.wash(dog)
+    puts "washing a #{dog.size} dog"
+  end
+
+  def wash
+    puts "washing a #{@size} dog"
   end
 
   private
@@ -37,6 +37,10 @@ end
 
 nelson = Dog.new('brown', 'small')
 pelle = Dog.new('white', 'big')
+
+# if I create a rspec test for Dog, then subject is an object that is an instance of Dog
+# Just like nelson above is an instance of Dog
+# describe Nelson do will automatically do subject = new Dog
 
 puts nelson.size
 

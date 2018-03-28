@@ -6,7 +6,6 @@ class Atm
   end
 
   def withdraw(amount, pin_code, account)
-
     case
     when insufficient_funds_in_account?(amount, account)
       # we exit the method if the amount we want to withdraw is
@@ -45,6 +44,7 @@ class Atm
     @funds -= amount
     # We also DEDUCT the amount from the accounts balance
     account.balance = account.balance - amount
+
     # and we return a responce for a successfull withdraw.
     {
       status: true,
